@@ -1,12 +1,11 @@
 #include <bits/stdc++.h>
 
-template <typename C>
-int sz(const C &c) { return static_cast<int>(c.size()); }
 
 using namespace std;
 
 int main()
 {
+
     int biggestEnd = 0;
     int leftCoord, height, rightCoord;
     vector<int> bHeight(10000);
