@@ -5,17 +5,6 @@ int sz(const C &c) { return static_cast<int>(c.size()); }
 
 using namespace std;
 
-int etruscan(int a)
-{
-    int count = 0;
-    for(int i = 1; a > 1; i++) {
-        if(a >= i) {
-            count++;
-        }
-        a = a - i;
-    }
-    return count;
-}
 
 int main()
 {
@@ -23,9 +12,9 @@ int main()
     std::cin >> numOfTest;
     for(int i = 0; i < numOfTest; i++)
     {
-        int a;
+        long a;
         std::cin >> a;
-        std::cout << etruscan(a) << "\n";
+        std::cout << ((long)sqrt(8 * a + 1) - 1) / 2 << "\n";
     }
     
     
