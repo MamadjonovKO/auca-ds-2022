@@ -10,13 +10,27 @@ int main()
     iostream::sync_with_stdio(false);
 
     int numOfRoads, numOfInt;
+    int suffix;
 
-    cin >> numOfRoads >> numOfInt;
-    while (numOfRoads != 0 && numOfInt != 0)
+    int count = 1;
+    while (cin >> numOfRoads >> numOfInt)
     {
-        cin >> numOfRoads >> numOfInt;
+        if(numOfRoads == 0 && numOfInt == 0)
+        {
+            break;
+        }
+
+        numOfRoads--;
+            
+        suffix = numOfRoads / numOfInt;
         
-        
+        if(suffix > 26)
+        {
+            cout << "Case " << count++ << ": " << "impossible" << endl;
+        }
+        else
+        {
+             cout << "Case " << count++ << ": " << suffix << endl;
+        }
     }
-    
 }
