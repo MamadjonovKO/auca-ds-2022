@@ -60,7 +60,7 @@ vector<int> createDeck()
 vector<vector<int>> readShuffles()
 {
     int n;
-    cin >> n
+    cin >> n;
 
     vector<vector<int>> r(m, vector<int> (52));
 
@@ -68,7 +68,7 @@ vector<vector<int>> readShuffles()
     {
         for(int j = 0; j < 52; j++)
         {
-            cin >> r[i][j]
+            cin >> r[i][j];
         }
     }
 
@@ -83,6 +83,6 @@ void  applyShuffleToDeck(vector<int>& deck, const vector<int>& shuffle)
 
     for(int i = 0; i < shuffle.size(); i++)
     {
-        deck[i] = tVector[shuffle[i]]
+        deck[i] = tVector[shuffle[i]];
     }
 }
