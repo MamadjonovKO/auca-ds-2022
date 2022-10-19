@@ -18,7 +18,7 @@ int main()
         auto shuffles = readShuffles();
         auto deck = createDeck();
 
-        for(string line; getline(cin, line); && !line.empty)
+        for(string line; getline(cin, line) && !line.empty();)
         {
             int m = stoi(line);
             applyShuffleToDeck(deck, shuffles[m-1]);
@@ -62,9 +62,9 @@ vector<vector<int>> readShuffles()
     int n;
     cin >> n;
 
-    vector<vector<int>> r(m, vector<int> (52));
+    vector<vector<int>> r(n, vector<int> (52));
 
-    for(int i = 0; i < m; i++)
+    for(int i = 0; i < n; i++)
     {
         for(int j = 0; j < 52; j++)
         {
@@ -72,7 +72,7 @@ vector<vector<int>> readShuffles()
         }
     }
 
-    cin.ignore(1024, "\n");
+    cin.ignore(1024, '\n');
 
     return r;
 }
@@ -83,6 +83,6 @@ void  applyShuffleToDeck(vector<int>& deck, const vector<int>& shuffle)
 
     for(int i = 0; i < shuffle.size(); i++)
     {
-        deck[i] = tVector[shuffle[i]];
+        deck[i] = tVector[shuffle[i] - 1];
     }
 }
